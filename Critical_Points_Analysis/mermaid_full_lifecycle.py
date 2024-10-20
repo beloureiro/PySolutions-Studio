@@ -12,8 +12,8 @@ def full_lifecycle_sequence_diagram():
         'theme': 'dark',
         'themeVariables': {
             'actorTextColor': '#FFFFFF',
-            'actorLineColor': '#00c3a5',
-            'signalColor': '#00c3a5',
+            'actorLineColor': '#1b9e4b',
+            'signalColor': '#1b9e4b',
             'signalTextColor': '#FFFFFF',
             'labelTextColor': '#FFFFFF',
             'noteBkgColor': '#262730',
@@ -38,7 +38,7 @@ def full_lifecycle_sequence_diagram():
     InternalSystem-->>-DocPlanner: Confirm Appointment
     DocPlanner-->>-Patient: Confirm Appointment
 
-    %% Touchpoint 3: Make Payment (Online or at Reception)
+    %% Touchpoint 3: Make Payment (Online ou na Recepção)
     alt Make Payment Online
         Patient->>+DocPlanner: 3. Make Payment Online
         DocPlanner->>+InternalSystem: Record Payment
@@ -49,7 +49,7 @@ def full_lifecycle_sequence_diagram():
         InternalSystem-->>-DocPlanner: Confirm Payment
     end
 
-    %% Touchpoint 5: Check-in (Online or Offline)
+    %% Touchpoint 5: Check-in (Online ou Offline)
     alt Check-in Online
         Patient->>+DocPlanner: 5. Check-in Online
         DocPlanner->>+InternalSystem: Update Check-in Data
@@ -64,7 +64,7 @@ def full_lifecycle_sequence_diagram():
     Patient->>+DocPlanner: 7. Access Platform for Online Consultation
     DocPlanner->>+Doctor: Connect Doctor and Patient
 
-    %% Touchpoint 8: Attend Consultation (Online or Offline)
+    %% Touchpoint 8: Attend Consultation (Online ou Offline)
     alt Online Consultation
         Doctor-->>-Patient: 8. Attend Online Consultation
         Doctor->>+DocPlanner: Add Notes to Patient Record
@@ -115,3 +115,4 @@ def full_lifecycle_sequence_diagram():
     # st.code(mermaid_code, language="mermaid")
 
 # Chame a função onde você precisar renderizar o diagrama
+

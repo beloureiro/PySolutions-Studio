@@ -32,7 +32,7 @@ def critical_points_function():
     The default view focuses on negative sentiment to help identify the most critical touchpoints. However, you can adjust this by using the filters below. Additionally, view the behavior broken down by country in the diagram. The second table below displays the feedback entries from the database.
     """, unsafe_allow_html=True)
 
-    st.markdown("<h2 style='color: #00c3a5;'>Critical Touchpoints Analysis</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='color: #1b9e4b;'>Critical Touchpoints Analysis</h2>", unsafe_allow_html=True)
 
     # Add your note here
     st.markdown("""
@@ -336,3 +336,4 @@ def critical_points_function():
     st.markdown("---")
 
     # End of the function
+

@@ -3,7 +3,7 @@ import streamlit as st
 
 def get_patient_lifecycle():
     content = """
-    <h3 style="color: #00c3a5;">Touchpoints</h3>
+    <h3 style="color: #1b9e4b;">Touchpoints</h3>
 
     A touchpoint refers to a specific stage in the process where the patient directly interacts, influencing their experience and satisfaction. Effective management of this lifecycle often depends on third parties, and despite best efforts, factors such as the quality of medical care—often outside direct control—can significantly impact the patient’s experience. In response to these limitations in autonomy, strategic influence actions should be developed to improve sentiment levels and engagement on the platform.
 
@@ -17,7 +17,7 @@ def get_patient_lifecycle():
 
     with col1:
         st.markdown("""
-        <span style='color:#00c3a5;'><strong>Compact View</strong></span>  
+        <span style='color:#1b9e4b;'><strong>Compact View</strong></span>  
         The compact view is a simplified, educational version of the process. It focuses on the essential steps, making it easier to understand the key touchpoints that influence patient satisfaction.
         """, unsafe_allow_html=True)
 
@@ -31,7 +31,7 @@ def get_patient_lifecycle():
 
     with col2:
         st.markdown("""
-        <span style='color:#00c3a5;'><strong>Full View</strong></span>  
+        <span style='color:#1b9e4b;'><strong>Full View</strong></span>  
         The full view represents the actual, detailed process, covering all touchpoints that need management for optimal patient satisfaction. It includes additional steps.
         """, unsafe_allow_html=True)
 

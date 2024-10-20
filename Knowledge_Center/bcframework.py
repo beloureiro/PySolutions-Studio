@@ -1,16 +1,16 @@
 import streamlit as st
 
 def run_bcframework():
-    st.title("Business Case Web App")
-    st.write("Welcome to the Business Case Web App!")
+    st.title("Comprehensive Problem Solving: From Analysis to Action")
     st.markdown("""
-    This web app was developed to explain the <span style='color: #00c3a5;'><strong>Business Case Framework</strong></span>, which is structured in four stages. 
-    The framework begins with mapping the patient lifecycle within the process and identifying critical touchpoints to understand the patient journey. 
-    Next, two custom-made Python-based NLP algorithms were developed specifically for this Business Case: the first prepares the data and captures sentiment from user feedback, and the second organizes the cleaned data, correlating the sentiment data with specific processes (touchpoints) to generate a sentiment score for each process based on individual reviews. 
-    Following this, the framework uses these sentiment scores to uncover key pain points within the processes. 
-    After conducting a root cause analysis and prioritizing the most significant causes, preliminary goals are defined based on internal benchmarks. 
-    These goals then guide the development of a strategic action plan aimed at improving patient care, while subtly identifying internal improvement opportunities and potential revenue enhancements.
+    This web app presents a framework that integrates various methodologies and technologies, including Python, fullstack development, machine learning, problem-solving with the PDCA method, process design using BPMN methodology and the Mermaid library, as well as interactive dashboards for data analysis. It also incorporates data treatment (ETL), goal setting, and a wide range of visualizations.
+
+    The framework is structured in four stages. It begins with mapping the patient lifecycle within the process and identifying critical touchpoints to understand the patient journey. 
+    Two custom-built Python-based NLP algorithms were developed: the first prepares the data and captures sentiment from user feedback, while the second organizes the cleaned data, correlating sentiment data with specific processes (touchpoints) to generate a sentiment score for each process based on individual reviews.
+
+    These sentiment scores help uncover key pain points within the processes. A root cause analysis is then conducted to prioritize the most significant causes, followed by the definition of preliminary goals based on internal benchmarks. These goals inform the development of a strategic action plan aimed at improving patient care, while identifying internal improvement opportunities and potential revenue enhancements.
     """, unsafe_allow_html=True)
+
 
     st.write("""
     Below, you will find more detailed information on each of the four stages of the web app.
@@ -26,7 +26,7 @@ def run_bcframework():
     st.write("___")  # Linha de separação
 
     st.markdown("""
-    <span style='color: #00c3a5;'><strong>Use the navigation menu on the left (⬅️) to explore each stage of the web app in detail.</strong></span>
+    <span style='color: #1b9e4b;'><strong>Use the navigation menu on the left (⬅️) to explore each stage of the web app in detail.</strong></span>
     """, unsafe_allow_html=True)
 
 

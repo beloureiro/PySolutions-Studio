@@ -13,10 +13,24 @@ warnings.filterwarnings("ignore")
 # Configuração da página (deve ser a primeira chamada)
 st.set_page_config(layout="wide", page_title="Business Case Analysis Dashboard")
 
+# Estilo CSS personalizado
+st.markdown("""
+<style>
+    [data-testid="stSidebar"] {
+        background-color: #0e1118;
+    }
+    [data-testid="stSidebar"] > div:first-child {
+        background-color: #0e1118;
+    }
+    .st-bw {
+        background-color: #0e1118;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # Caminho para o diretório do logo
 logo_dir = os.path.join(os.getcwd(), 'logo')
-logo_path = os.path.join(logo_dir, 'Logo_full.png')
+logo_path = os.path.join(logo_dir, 'InMotion_transp.png')
 
 # Verificar se o arquivo existe e exibir na sidebar
 if os.path.isfile(logo_path):
@@ -27,53 +41,41 @@ else:
     st.sidebar.error(f"Logo file not found at {logo_path}")
 
 # Título e separação na barra lateral
-st.sidebar.markdown("<h1 style='text-align: center; font-size: 24px;'>Business Case Analysis</h1>", unsafe_allow_html=True)
+st.sidebar.markdown("<h1 style='text-align: center; font-size: 24px;'>Solution Pathway</h1>", unsafe_allow_html=True)
 st.sidebar.markdown("<hr>", unsafe_allow_html=True)
 
 # Barra lateral de navegação
 st.sidebar.markdown("<h2 style='text-align: left;'>Navigation</h2>", unsafe_allow_html=True)
 page = st.sidebar.radio("Select a Step:", 
                         ("Business Case Framework",
-                         "Data Categorization",  # Alterado
-                         "Critical Points Analysis",  # Alterado
-                         "Root Cause Hypothesis",  # Alterado
-                         "Action Plan Development",  # Alterado
-                         "Beyond the Scope"),  # Alterado
+                         "Data Categorization",
+                         "Critical Points Analysis",
+                         "Root Cause Hypothesis",
+                         "Action Plan Development",
+                         "Beyond the Scope"),
                         index=0)
 
-# Informações do candidato
-st.sidebar.markdown("<hr>", unsafe_allow_html=True)
-st.sidebar.markdown("<h5 style='color: rgb(0, 204, 177);'>Candidate:</h5> <h6 style='font-style: italic;'>Bernardo Carvalho</h6>", unsafe_allow_html=True)
-st.sidebar.markdown("<h5 style='color: rgb(0, 204, 177);'>Position:</h5> <h6 style='font-style: italic;'>Senior Project Manager - Patient Care</h6>", unsafe_allow_html=True)
-
-# Informações de contato
-st.sidebar.markdown("<h5 style='color: rgb(0, 204, 177);'>Contact Information:</h5>", unsafe_allow_html=True)
-st.sidebar.markdown("<hr>", unsafe_allow_html=True)
-
-contact_info = [
-    ("linkedin.png", "LinkedIn", "bernardoloureiro", "https://www.linkedin.com/in/bernardoloureiro/"),
-    ("phone.png", "Phone", "+351 915542701", "tel:+351915542701"),
-    ("mail.png", "Email", "bc@inmotion.today", "mailto:bc@inmotion.today"),
-    ("globe.png", "Website", "inMotion.today", "https://inmotion.today")
-]
-
-for logo, label, value, link in contact_info:
-    logo_path = os.path.join(logo_dir, logo)
-    if os.path.isfile(logo_path):
-        with open(logo_path, "rb") as f:
-            logo_data = f.read()
-        logo_b64 = base64.b64encode(logo_data).decode()
-        st.sidebar.markdown(f"""
-            <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                <img src="data:image/png;base64,{logo_b64}" alt="{label}" style="width: 20px; height: 20px; margin-right: 10px;">
-                <div>
-                    <strong>{label}:</strong><br>
-                    <a href="{link}" target="_blank" style="color: rgb(0, 204, 177);">{value}</a>
-                </div>
-            </div>
-        """, unsafe_allow_html=True)
-    else:
-        st.sidebar.warning(f"Logo not found: {logo_path}")
+# Adicionar o novo rodapé
+st.sidebar.markdown("""
+<style>
+    .sidebar-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        background-color: rgba(14, 17, 24, 0.9);
+        z-index: 1000;
+    }
+    [data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
+        padding-bottom: 40px;
+    }
+</style>
+<div class="sidebar-footer">
+    <p style='color: white; margin: 0;'>Powered by <a href="https://inmotion.today/" style='color: #1b9e4b;'>Inmotion</a></p>
+</div>
+""", unsafe_allow_html=True)
 
 # Chamar a função correspondente à página selecionada
 if page == "Business Case Framework":

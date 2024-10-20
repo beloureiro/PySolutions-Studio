@@ -7,7 +7,7 @@ import pandas as pd
 def grafico_meta(df):
     # Add the new text at the end with green titles and numbers, and emphasized introduction
     st.markdown("""
-    <h3 style="color: #00c3a5; text-align: center;">
+    <h3 style="color: #1b9e4b; text-align: center;">
     The goals below were defined to guide the improvement process over the next 6 months:
     </h3>
     """, unsafe_allow_html=True)
@@ -16,20 +16,20 @@ def grafico_meta(df):
 
     with col1:
         st.markdown("""
-        <span style="color: #00c3a5;">**Online Consultation:**</span>  
-        For the Online Consultation process, the benchmark is <span style="color: #00c3a5;">**0.17**</span>, with a current difference of <span style="color: #00c3a5;">**22.01%**</span>. The goal is to achieve a <span style="color: #00c3a5;">**20%**</span> improvement, increasing the average sentiment score from <span style="color: #00c3a5;">**0.14**</span> within the next 6 months.
+        <span style="color: #1b9e4b;">**Online Consultation:**</span>  
+        For the Online Consultation process, the benchmark is <span style="color: #1b9e4b;">**0.17**</span>, with a current difference of <span style="color: #1b9e4b;">**22.01%**</span>. The goal is to achieve a <span style="color: #1b9e4b;">**20%**</span> improvement, increasing the average sentiment score from <span style="color: #1b9e4b;">**0.14**</span> within the next 6 months.
         """, unsafe_allow_html=True)
 
     with col2:
         st.markdown("""
-        <span style="color: #00c3a5;">**Leaving Reviews and Feedback:**</span>  
-        For the Leaving Reviews and Feedback process, the benchmark is <span style="color: #00c3a5;">**0.22**</span>, with a current difference of <span style="color: #00c3a5;">**21.56%**</span>. The goal is to achieve a <span style="color: #00c3a5;">**20%**</span> improvement, increasing the average sentiment score from <span style="color: #00c3a5;">**0.18**</span> within the next 6 months.
+        <span style="color: #1b9e4b;">**Leaving Reviews and Feedback:**</span>  
+        For the Leaving Reviews and Feedback process, the benchmark is <span style="color: #1b9e4b;">**0.22**</span>, with a current difference of <span style="color: #1b9e4b;">**21.56%**</span>. The goal is to achieve a <span style="color: #1b9e4b;">**20%**</span> improvement, increasing the average sentiment score from <span style="color: #1b9e4b;">**0.18**</span> within the next 6 months.
         """, unsafe_allow_html=True)
 
     with col3:
         st.markdown("""
-        <span style="color: #00c3a5;">**Searching and Evaluating Professional Scores:**</span>  
-        For the Searching and Evaluating Professional Scores process, the benchmark is <span style="color: #00c3a5;">**0.15**</span>, with a current absolute difference of <span style="color: #00c3a5;">**0.15**</span>. The goal is to reduce this difference by <span style="color: #00c3a5;">**20%**</span>, achieving an average sentiment score of approximately <span style="color: #00c3a5;">**0.03**</span> within the next 6 months. (Note: The benchmark may indicate an outlier.)
+        <span style="color: #1b9e4b;">**Searching and Evaluating Professional Scores:**</span>  
+        For the Searching and Evaluating Professional Scores process, the benchmark is <span style="color: #1b9e4b;">**0.15**</span>, with a current absolute difference of <span style="color: #1b9e4b;">**0.15**</span>. The goal is to reduce this difference by <span style="color: #1b9e4b;">**20%**</span>, achieving an average sentiment score of approximately <span style="color: #1b9e4b;">**0.03**</span> within the next 6 months. (Note: The benchmark may indicate an outlier.)
         """, unsafe_allow_html=True)
 
     # Criando três colunas para os gráficos
@@ -72,7 +72,7 @@ def create_sentiment_chart(df, metric, default_touchpoint, index):
         vmin = filtered_sentiment_counts['mean'].min()
         vmax = filtered_sentiment_counts['mean'].max()
 
-        colors = ['#ff4b4b', '#ffdc00', '#02b99d']
+        colors = ['#ff4b4b', '#ffdc00', '#1b9e4b']
         cmap = mcolors.LinearSegmentedColormap.from_list("custom", colors, N=100)
 
         all_weeks = filtered_sentiment_counts['week_number'] + (filtered_sentiment_counts['year'] - filtered_sentiment_counts['year'].min()) * 52
@@ -91,7 +91,7 @@ def create_sentiment_chart(df, metric, default_touchpoint, index):
 
         # Linha verde para o valor mais alto
         max_sentiment = filtered_sentiment_counts['mean'].max()
-        ax.axhline(y=max_sentiment, color='#00c3a5', linestyle='-', label='Highest Value', linewidth=1.5)
+        ax.axhline(y=max_sentiment, color='#1b9e4b', linestyle='-', label='Highest Value', linewidth=1.5)
 
         x = all_weeks
         y = filtered_sentiment_counts['mean']
@@ -132,15 +132,15 @@ def create_sentiment_chart(df, metric, default_touchpoint, index):
                 if percentage_difference < 0:
                     # Se a diferença percentual for negativa, exibe o valor absoluto
                     absolute_difference = abs(benchmark_value - current_mean)
-                    st.markdown(f"<p style='color: #00c3a5;'>Average: {current_mean:.2f} | Benchmark: {benchmark_value:.2f} | Difference: {absolute_difference:.2f} (absolute)</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p style='color: #1b9e4b;'>Average: {current_mean:.2f} | Benchmark: {benchmark_value:.2f} | Difference: {absolute_difference:.2f} (absolute)</p>", unsafe_allow_html=True)
                 else:
-                    st.markdown(f"<p style='color: #00c3a5;'>Average: {current_mean:.2f} | Benchmark: {benchmark_value:.2f} | Difference: {percentage_difference:.2f}%</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p style='color: #1b9e4b;'>Average: {current_mean:.2f} | Benchmark: {benchmark_value:.2f} | Difference: {percentage_difference:.2f}%</p>", unsafe_allow_html=True)
             else:
                 st.markdown(f"<p style='color: #ff4b4b;'>Average: {current_mean:.2f} | Benchmark: {benchmark_value:.2f} | Difference: Not Calculable (Zero Average)</p>", unsafe_allow_html=True)
         else:
             # Sinais diferentes - exibe a diferença absoluta
             absolute_difference = abs(benchmark_value - current_mean)
-            st.markdown(f"<p style='color: #00c3a5;'>Average: {current_mean:.2f} | Benchmark: {benchmark_value:.2f} | Difference: {absolute_difference:.2f} (absolute)</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='color: #1b9e4b;'>Average: {current_mean:.2f} | Benchmark: {benchmark_value:.2f} | Difference: {absolute_difference:.2f} (absolute)</p>", unsafe_allow_html=True)
 
         with st.expander("See explanation"):
             st.write(f"""
@@ -157,3 +157,4 @@ if __name__ == "__main__":
     # Este bloco só será executado se o script for executado diretamente
     # Você pode adicionar código de teste aqui se necessário
     pass
+

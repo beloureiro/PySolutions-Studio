@@ -12,8 +12,8 @@ def compact_lifecycle_sequence_diagram():
         'theme': 'dark',
         'themeVariables': {
             'actorTextColor': '#FFFFFF',
-            'actorLineColor': '#00c3a5',
-            'signalColor': '#00c3a5',
+            'actorLineColor': '#1b9e4b',
+            'signalColor': '#1b9e4b',
             'signalTextColor': '#FFFFFF',
             'labelTextColor': '#FFFFFF',
             'noteBkgColor': '#262730',
@@ -75,3 +75,4 @@ def compact_lifecycle_sequence_diagram():
     # st.code(mermaid_code, language="mermaid")
 
 # Chame a função onde você precisar renderizar o diagrama
+
