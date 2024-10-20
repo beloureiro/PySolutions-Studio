@@ -1,0 +1,38 @@
+# Ambiente virtual
+venv/
+.venv/
+
+# Compilados
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Distribuições
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+
+# Arquivos de configuração do IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos de log
+*.log
+
+# Arquivos de teste
+.coverage
+nosetests.xml
+test-results/
+
+# Outros
+*.DS_Store
+*.env
+*.env.local
+*.env.*.local
+*.pkl
+*.sqlite3
