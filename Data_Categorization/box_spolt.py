@@ -4,7 +4,7 @@ import numpy as np
 
 def display_text_length_comparison(df):
     st.header('Text Length Comparison')
-    st.markdown("<hr style='border: 1px solid #00c3a5;'>", unsafe_allow_html=True)
+    st.markdown("<hr style='border: 1px solid #1b9e4b;'>", unsafe_allow_html=True)
     col1, col2 = st.columns(2)
 
     # Mapeamento dos países
@@ -98,7 +98,7 @@ def display_text_length_comparison(df):
 
         # Alterar a cor do corpo do gráfico
         for pc in parts['bodies']:
-            pc.set_facecolor('#00c3a5')
+            pc.set_facecolor('#1b9e4b')
             pc.set_edgecolor('white')
             pc.set_alpha(0.75)
         

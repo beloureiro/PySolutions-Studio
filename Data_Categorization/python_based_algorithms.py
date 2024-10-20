@@ -3,7 +3,7 @@ import streamlit as st
 
 def Python_Algorithms():
     st.markdown("""
-    <h2 style="color: #00c3a5;">Introduction to Python-Based Algorithms for Feedback Analysis</h2>
+    <h2 style="color: #1b9e4b;">Introduction to Python-Based Algorithms for Feedback Analysis</h2>
 
     These Python algorithms were developed to efficiently process and analyze large volumes of unstructured user feedback, aiming to uncover key patient concerns. A two-step approach was implemented: the first model focuses on text processing and sentiment analysis to quickly gauge the overall tone, while the second categorizes and extracts touchpoints. This method ensures a structured and precise analysis of the feedback.
 
@@ -30,7 +30,7 @@ def Python_Algorithms():
             This algorithm leverages **spaCy** (for named entity recognition), **BERT** (for natural language processing, tokenization, and text classification), and **Pandas** (for data manipulation) to automatically categorize user feedback and extract touchpoints. It combines **BERT's** contextual analysis with keyword-based categorization and sentiment adjustment, enhancing the accuracy of classification, especially in critical reviews. The algorithm also includes advanced sentiment manipulation using a custom dictionary of negative phrases, ensuring more precise sentiment interpretation. Additionally, **multiprocessing** is utilized for parallel processing of large datasets, improving efficiency. Performance is further optimized through caching and just-in-time (JIT) compilation. While robust, this model can be refined to better manage complex language nuances and challenging sentiment cases.
             """)
 
-    st.markdown("<hr style='border: 1px solid #00c3a5;'>",
+    st.markdown("<hr style='border: 1px solid #1b9e4b;'>",
                 unsafe_allow_html=True)
 
 

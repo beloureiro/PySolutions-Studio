@@ -166,7 +166,7 @@ def run_data_categorization():
 
     # Temporal Analysis
     st.header('Temporal Analysis')
-    st.markdown("<hr style='border: 1px solid #00c3a5;'>",
+    st.markdown("<hr style='border: 1px solid #1b9e4b;'>",
                 unsafe_allow_html=True)
     st.write("""
     This section presents a temporal analysis based on the dataset spanning from April 1st, 2024, to June 30th, 2024, covering a total duration of 91 days. The dataset is organized into 13 weeks. Within this period, the analysis includes data from three countries: Spain (es), Germany (de), and Brazil (br), with a total of 44,851 records.
@@ -247,7 +247,7 @@ def run_data_categorization():
             fig1.patch.set_facecolor('#0e1117')
             ax1.set_facecolor('#262730')
             bars = ax1.bar(filtered_weekly_counts['week_number'],
-                           filtered_weekly_counts['count'], color='#00C3A5', label='Record Count')
+                           filtered_weekly_counts['count'], color='#1b9e4b', label='Record Count')
 
             # Adicionar a linha da média
             ax1.axhline(mean_value, color='blue', linestyle='-', label=f'Average: {
@@ -316,7 +316,7 @@ def run_data_categorization():
             vmax = filtered_sentiment_counts['mean'].max()
 
             # Red to Yellow to Green
-            colors = ['#ff4b4b', '#ffdc00', '#02b99d']
+            colors = ['#ff4b4b', '#ffdc00', '#1b9e4b']
             cmap = mcolors.LinearSegmentedColormap.from_list(
                 "custom", colors, N=100)
 
@@ -425,7 +425,7 @@ def run_data_categorization():
         fig3.patch.set_facecolor('#0e1117')  # Cor de fundo da figura
         ax3.set_facecolor('#262730')  # Cor de fundo do eixo
         bars = ax3.barh(country_distribution.index, country_distribution.values, color=[
-                        '#009079', '#cc9300', '#642f7a'])
+                        '#1b9e4b', '#cc9300', '#642f7a'])
 
         for i, (country, v) in enumerate(country_distribution.items()):
             percentage = (v / country_distribution.sum()) * 100
@@ -461,7 +461,7 @@ def run_data_categorization():
         fig4.patch.set_facecolor('#0e1117')  # Cor de fundo da figura
         ax4.set_facecolor('#262730')  # Cor de fundo do eixo
         country_time_distribution_percentage.plot(
-            kind='area', stacked=True, ax=ax4, color=['#009079', '#cc9300', '#642f7a'])
+            kind='area', stacked=True, ax=ax4, color=['#1b9e4b', '#cc9300', '#642f7a'])
 
         ax4.set_title('Country Distribution Over Time',
                       color='white')  # Título em branco
@@ -503,7 +503,7 @@ def run_data_categorization():
 
     # Word Cloud Analysis
     st.header('Word Clouds: Comparing Original and Cleaned Text')
-    st.markdown("<hr style='border: 1px solid #00c3a5;'>",
+    st.markdown("<hr style='border: 1px solid #1b9e4b;'>",
                 unsafe_allow_html=True)
 
     # Contar palavras
@@ -654,7 +654,7 @@ def run_data_categorization():
 
     # Gráfico de Distribuição de Sentimentos
     st.header('Sentiment Distribution')
-    st.markdown("<hr style='border: 1px solid #00c3a5;'>",
+    st.markdown("<hr style='border: 1px solid #1b9e4b;'>",
                 unsafe_allow_html=True)
     st.write(
         "Sentiment Score: Ranges from -1 (very negative) to +1 (very positive); 0 is neutral")
@@ -752,7 +752,7 @@ def run_data_categorization():
         fig2.patch.set_facecolor('#0e1117')
         ax2.set_facecolor('#262730')
         filtered_df_sentiment_cleaned['cleaned_sentiment'].hist(
-            ax=ax2, bins=50, alpha=0.7, color='#00c3a5', label='Cleaned Sentiment')
+            ax=ax2, bins=50, alpha=0.7, color='#1b9e4b', label='Cleaned Sentiment')
         ax2.set_xlabel('Sentiment Score', color='white')
         ax2.set_ylabel('Frequency', color='white')
         ax2.set_title('Cleaned Sentiment Distribution', color='white')
