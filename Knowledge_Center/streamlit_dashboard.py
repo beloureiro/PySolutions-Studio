@@ -51,8 +51,7 @@ page = st.sidebar.radio("Select a Step:",
                          "Data Categorization",
                          "Critical Points Analysis",
                          "Root Cause Hypothesis",
-                         "Action Plan Development",
-                         "Beyond the Scope"),
+                         "Action Plan Development"),
                         index=0)
 
 # Adicionar o novo rodapé
@@ -111,9 +110,11 @@ elif page == "Action Plan Development":
     
     # Run the function
     run_action_plan_development()
-elif page == "Beyond the Scope":  # Adicione a lógica para a nova página
-    from Strategic_Goals import run_strategic_goals
-    run_strategic_goals()
+
+# Remova ou comente as linhas abaixo
+# elif page == "Beyond the Scope":
+#     from Strategic_Goals import run_strategic_goals
+#     run_strategic_goals()
 
 # to run the app on gitbash
 # source venv/Scripts/activate
