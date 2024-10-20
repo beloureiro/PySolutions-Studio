@@ -47,7 +47,7 @@ st.sidebar.markdown("<hr>", unsafe_allow_html=True)
 # Barra lateral de navegação
 st.sidebar.markdown("<h2 style='text-align: left;'>Navigation</h2>", unsafe_allow_html=True)
 page = st.sidebar.radio("Select a Step:", 
-                        ("Business Case Framework",
+                        ("Framework",
                          "Data Categorization",
                          "Critical Points Analysis",
                          "Root Cause Hypothesis",
@@ -77,7 +77,7 @@ st.sidebar.markdown("""
 """, unsafe_allow_html=True)
 
 # Chamar a função correspondente à página selecionada
-if page == "Business Case Framework":
+if page == "Framework":
     run_bcframework()
 elif page == "Data Categorization":
     import sys
@@ -110,11 +110,6 @@ elif page == "Action Plan Development":
     
     # Run the function
     run_action_plan_development()
-
-# Remova ou comente as linhas abaixo
-# elif page == "Beyond the Scope":
-#     from Strategic_Goals import run_strategic_goals
-#     run_strategic_goals()
 
 # to run the app on gitbash
 # source venv/Scripts/activate
