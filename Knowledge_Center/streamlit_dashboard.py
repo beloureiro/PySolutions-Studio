@@ -41,8 +41,8 @@ else:
     st.sidebar.error(f"Logo file not found at {logo_path}")
 
 # Título e separação na barra lateral
-st.sidebar.markdown("<h1 style='text-align: center; font-size: 24px;'>Solution Pathway</h1>", unsafe_allow_html=True)
-st.sidebar.markdown("<hr>", unsafe_allow_html=True)
+#st.sidebar.markdown("<h1 style='text-align: center; font-size: 24px;'>Solution Pathway</h1>", unsafe_allow_html=True)
+#st.sidebar.markdown("<hr>", unsafe_allow_html=True)
 
 # Barra lateral de navegação
 st.sidebar.markdown("<h2 style='text-align: left;'>Navigation</h2>", unsafe_allow_html=True)
